@@ -24,16 +24,17 @@ exports.config = {
     geckoDriver:'./divers/GeckoDriver v0.24.0/geckodriver.exe',
 
     params:{
-        login:{
-            user:"aleksandar.perisic@outlook.com",
+        reg:{
+            email:"aleksandar.perisic@outlook.com",
+            name:"Aleksandar",
+            lastname:"Perisic",
             password:"nbaca1108"
         }
     },
     
     baseUrl: 'https://www.shownieuws.nl/',
 
-    specs: ['./newtests/homepage.spec.js',
-            './newtests/signin.happy.flow.spec.js'
+    specs: ['./tests/home.spec.js',
     ],
 
     SELENIUM_PROMISE_MANAGER: false,

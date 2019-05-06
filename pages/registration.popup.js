@@ -1,10 +1,27 @@
 let regPage = function () {
-    this.lefttopimg=element.all(by.css('div[class="gigya-brand gigya-brand-sbs6-tv-web"]')).first();
-    this.lefttoptxt=element.all(by.css('div[class="title"]')).first();
-    this.
-    this.leftmidbottomtxt=element.all(by.css('div[class="bottom"] span')).first();
-    this.leftmidbottomlink=element.all(by.css('div[class="bottom"] a')).first();
-    this.
-
+    this.close=element.all(by.css('a[class="close-button mobile-hidden"]')).first();
+    this.leftTopImg=element.all(by.css('div[class="gigya-brand gigya-brand-sbs6-tv-web"]')).first();
+    this.leftTopTxt=element.all(by.css('div[class="title"]')).first();
+    this.leftMid=element.all(by.css('div[class="gigya-brand-body"]')).first();
+    this.leftMidBottomTxt=element.all(by.css('div[class="bottom"] span')).first();
+    this.leftMidBottomLink=element.all(by.css('div[class="bottom"] a')).first();
+    //this.leftBottomImg=element.all(by.css('div[class="bottom gigya-brand gigya-brand-talparadio-r538-web gigya-brand-talparadio-r538-app gigya-brand-sbs6-tv-web"]')).first().element.all(by.css('div[class="bottom"] span'));
+    this.facebook=element(by.css('button[aria-label="Facebook"]'));
+    this.rightTopText=element.all(by.css('div[class="We-plaatsen-nooit-ie"]')).first();
+    this.rightLineText=element.all(by.css('p[class="gigya-line-divider"] span')).first();
+    this.email=element.all(by.css('input[aria-label="Email"]')).first();
+    this.emailError=element.all(by.css('span[data-bound-to="email"]')).first();
+    this.name=element.all(by.css('input[aria-label="First name"]')).first();
+    this.lastname=element.all(by.css('input[aria-label="Last name"]')).first();
+    this.password=element.all(by.css('input[aria-label="Password"]')).first();
+    this.passwordError=element.all(by.css('span[data-bound-to="password"]')).first();
+    this.passwordConf=element.all(by.css('input[aria-label="Confirm password"]')).first();
+    this.passwordRetypeError=element.all(by.css('span[data-bound-to="password"]')).first();
+    this.manRadio=element.all(by.css('input[class="gigya-input-radio gigya-valid"]')).first();
+    this.womanRadio=element.all(by.css('input[class="gigya-input-radio gigya-valid"]')).last();
+    this.checkbox=element.all(by.css('input[class="gigya-metadata"]')).first();
+    this.cookiePolicyLink=element.all(by.css('div[class="check-list-text gigya-terms-valid"] a'));
+    this.submit=element.all(by.css('input[class="btn btn-primary btn-block register-button-submit"]')).first();
+    this.login=element.all(by.css('a[data-switch-screen="gigya-login-screen"]')).first();
 };
 module.exports = regPage;
