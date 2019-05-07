@@ -8,21 +8,16 @@ var firefox = [ './divers/GeckoDriver v0.24.0/geckodriver.exe',
                 './divers/GeckoDriver v0.22.0/geckodriver.exe'];
 exports.config = {
     
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    //seleniumAddress: 'http://localhost:4444/wd/hub',
 
     directConnect: true,
 
-    // Capabilities to be passed to the webdriver instance.
     multiCapabilities: [{
         browserName: 'chrome'
     },
     {
         browserName: 'firefox'
     }],
-
-    /*capabilities:{
-        browserName: 'chrome'
-    },*/
 
     chromeDriver:chrome[0],
 
@@ -40,7 +35,9 @@ exports.config = {
     baseUrl: 'https://www.shownieuws.nl/',
 
     specs: ['./tests/home.spec.js',
-            './tests/reg.email.happy.flow.spec.js',
+            './tests/registration.spec.js',
+            './tests/registration.facebook.happy.flow.spec.js',
+            //'./tests/registration.email.happy.flow.spec.js',
     ],
 
     SELENIUM_PROMISE_MANAGER: false,

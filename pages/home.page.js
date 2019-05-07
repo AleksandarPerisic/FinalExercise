@@ -4,5 +4,6 @@ let homePage = function () {
     //this.bizar=element.all(by.css('a[data-label="Bizar"]')).first();
     this.registrationLink=element.all(by.css('span[class="link"]')).first();
     this.registrationForm=element(by.css('div[class="gigya-screen-dialog-main"]'));
+    this.agreeAndContinue=element.all(by.css('input[value="Akkoord en doorgaan"]')).first();
 };
 module.exports = homePage;
