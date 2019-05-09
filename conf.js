@@ -12,33 +12,43 @@ exports.config = {
 
     directConnect: true,
 
-    multiCapabilities: [{
+    /*multiCapabilities: [{
         browserName: 'chrome'
     },
     {
         browserName: 'firefox'
-    }],
+    }],*/
 
+    capabilities:{
+        browserName: 'chrome'
+    },
     chromeDriver:chrome[0],
 
     geckoDriver:firefox[0],
 
     params:{
-        reg:{
+        regface:{
             email:"aleksandar.perisic@outlook.com",
+            password:"nbaca1108"
+        },
+        regmail:{
+            email:"aleksnadar.perisic25@gmail.com",
             name:"Aleksandar",
             lastname:"Perisic",
             password:"nbaca1108"
-        }
+        },
     },
     
     baseUrl: 'https://www.shownieuws.nl/',
 
-    specs: ['./tests/home.spec.js',
-            './tests/registration.spec.js',
-            './tests/registration.facebook.happy.flow.spec.js',
-            //'./tests/registration.email.happy.flow.spec.js',
-    ],
+    suites: {
+        verification:[  './tests/home.spec.js', 
+                        './tests/registration.spec.js'],
+        facebookreg:[   './tests/home.spec.js',
+                        './tests/registration.facebook.spec.js'], 
+        emailreg:[      './tests/home.spec.js',
+                        './tests/registration.email.spec.js']
+    },
 
     SELENIUM_PROMISE_MANAGER: false,
     

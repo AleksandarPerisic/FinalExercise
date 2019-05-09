@@ -9,6 +9,11 @@ describe('Registration from facebook test', function(){
     let reg = new regPage();
     let face = new facePage();
     let home = new homePage();
+    
+    /*afterAll(async() => {
+        console.log('calling after all');
+        browser.close();
+    });*/
 
     it('Verify that Facebook registration bottom is visible and clickable on the form',async () => {
         await base.waitElementToBeClickable(reg.facebook);
@@ -24,16 +29,22 @@ describe('Registration from facebook test', function(){
     });
 
     it('Verify that Facebook registration is successful',async ()=>{
-        await face.email.sendKeys(browser.params.reg.email);
-        await face.password.sendKeys(browser.params.reg.password);
+        await face.email.sendKeys(browser.params.regface.email);
+        await face.password.sendKeys(browser.params.regface.password);
         await face.login.click();
         await base.waitElementToBeClickable(face.continue);
-        expect(face.continue.isDisplayed()).toEqual(true);
+        await face.continue.click();
+        await browser.switchTo().window(winHandles[0]);
+        await browser.sleep(2000);
+        expect(await home.loginButtonTxt.getText()).toEqual(browser.params.regmail.name + " " + browser.params.regmail.lastname);
     });
 
-    it('Verify that Facebook registration window is closed',async ()=>{
-        await browser.switchTo().window(winHandles[0]);
-        expect(await home.registrationForm.isDisplayed()).toBe(true);
+    it('Verify that Facebook registered user is logout ',async ()=>{
+        await home.loginButton.click();
+        await base.waitElementToBeClickable(home.logout);
+        await home.logout.click();
+        await base.waitElementToBeClickable(home.loginButton);
+        expect(await home.loginButtonTxt.getText()).toEqual("Inloggen");
     });
     
 });

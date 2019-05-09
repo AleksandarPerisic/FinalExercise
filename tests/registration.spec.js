@@ -5,6 +5,11 @@ describe('Registration form test', function(){
     let base = new basePage();
     let reg = new regPage();
 
+    /*afterAll(async() => {
+        console.log('calling after all');
+        browser.close();
+    });*/
+
     it('Verify that image is visible on top left side of the form', async () => {
         await base.waitElementToBeVisible(reg.leftTopImg);
         expect(reg.leftTopImg.isDisplayed()).toEqual(true);
@@ -113,4 +118,5 @@ describe('Registration form test', function(){
         await base.waitElementToBeClickable(reg.login);
         expect(reg.login.isDisplayed()).toEqual(true); 
     });
+
 });
